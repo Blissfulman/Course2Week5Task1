@@ -20,13 +20,11 @@ class FirstViewController: UIViewController {
     }
     
     private func getDateAndTime() -> String {
-        let date = NSDate()
+        let currentDate = NSDate()
         let dateFormat: DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "MMM d, YYYY"
-        let timeFormat: DateFormatter = DateFormatter()
-        timeFormat.dateFormat = "hh:mm:ss a"
-        return dateFormat.string(from: date as Date) + " at " + timeFormat.string(from: date as Date)
-    }
+        dateFormat.dateStyle = .medium
+        dateFormat.timeStyle = .medium
+        return dateFormat.string(from: currentDate as Date)    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
